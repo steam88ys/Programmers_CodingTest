@@ -1,11 +1,11 @@
 class Solution {
-    public String solution(int n) {
-        String answer = "";
-        
-        for(int i = 0; i<n; i++) {
-            if(i%2==0) answer += '수';
-            else answer += '박';
+    public int solution(int[] absolutes, boolean[] signs) {
+        int answer = 0;
+        for(int i = 0; i<absolutes.length; i++) {
+            if(signs[i]==false) answer -= absolutes[i];
+            else answer += absolutes[i];
         }
+        
         return answer;
     }
 }
