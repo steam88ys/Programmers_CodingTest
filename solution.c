@@ -2,12 +2,13 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-int solution(int n) {
-    int i = (n-1);
-    int answer = i;
-    while(i>0) {
-        if(n%i==1) answer = i;
-        --i;
+// absolutes_len은 배열 absolutes의 길이입니다.
+// signs_len은 배열 signs의 길이입니다.
+int solution(int absolutes[], size_t absolutes_len, bool signs[], size_t signs_len) {
+    int answer = 0,i;
+    for(i = 0; i<absolutes_len; i++) {
+        if(signs[i]==false) answer -= absolutes[i];
+        else answer += absolutes[i];
     }
     return answer;
 }
