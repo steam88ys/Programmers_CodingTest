@@ -1,9 +1,17 @@
 class Solution {
-    public int solution(int[] numbers) {
-        int answer = 45;
-        for(int i = 0; i<numbers.length; i++) {
-                answer-=numbers[i];
+    public long solution(int a, int b) {
+        long answer = 0;
+        if(a>=b) {
+            for(int i = a; i>=b; i--) {
+                answer +=i;
+            }
         }
+        else {
+            for(int i = b; i>=a; i--) {
+                answer +=i;
+            }
+        }
+        
         return answer;
     }
 }
