@@ -1,17 +1,17 @@
 class Solution {
-    public long solution(int a, int b) {
-        long answer = 0;
-        if(a>=b) {
-            for(int i = a; i>=b; i--) {
-                answer +=i;
+    public int solution(int left, int right) {
+        int answer = 0;
+        int cnt;
+        for(int i = left; i<=right; i++) {
+            cnt = 0;
+            
+            for(int j = 1; j<=i; j++) {
+                if(i%j==0) cnt++;
             }
+            
+            if(cnt%2==0) answer+=i;
+            else answer-=i;
         }
-        else {
-            for(int i = b; i>=a; i--) {
-                answer +=i;
-            }
-        }
-        
         return answer;
     }
 }
