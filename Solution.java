@@ -1,9 +1,9 @@
 class Solution {
-    public long solution(int price, long money, int count) {
-        for(int i = 1; i<=count; i++) {
-            money -= (price*i);
+    public int solution(int n) {
+        int answer = 0;
+        for(int i = 1; i<=n; i++) {
+            if(n%i==0) answer+=i;
         }
-        if(money >= 0) return 0;
-        else return money*(-1);
+        return answer;
     }
 }
