@@ -1,8 +1,9 @@
 class Solution {
-    public String solution(int num) {
-        String answer = "";
-        if(num%2==0) answer = "Even";
-        else answer = "Odd";
-        return answer;
+    public double solution(int[] arr) {
+        double answer = 0;
+        for(int i=0; i<arr.length; i++) {
+            answer += arr[i];
+        }
+        return answer/arr.length;
     }
 }
