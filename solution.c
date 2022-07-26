@@ -2,17 +2,10 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-bool solution(int x) {
-    bool answer = false;
-    int origin = x;
-    int sum=0;
-    
-    while(x>0) {
-        sum+=(x%10);
-        x/=10;
+long long solution(long long n) {
+    double num = sqrt(n);
+    if(num == (int)num) {
+        return pow((num+1), 2);
     }
-    
-    if(origin%sum==0) answer = true;
-
-    return answer;
+    else return -1;
 }
